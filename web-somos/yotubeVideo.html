@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>Video  Example</title>
+  <!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" /> -->
+  <link rel="stylesheet" href="css/plyr.css" />
+  
+   <style>
+		.container {
+			margin: 20px auto;
+			max-width: 500px;
+		}
+		
+		.player {
+			--plyr-color-main: #1ac266;
+		}
+		
+		/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos adicionales, como ocultar el botón en el modal */
+
+    </style>
+</head>
+<body>
+
+<button id="playButton">Reproducir Video</button>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="player" id="player" data-plyr-provider="youtube" data-plyr-embed-id="jQUojT3Lw2s"></div>
+        </div>
+    </div>
+
+	
+<!-- <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script> -->
+<script src="js/plyr.min.js"></script>
+<script>
+  const player = new Plyr('#player');
+  
+  // Obtener elementos del DOM
+const playButton = document.getElementById("playButton");
+const videoModal = document.getElementById("videoModal");
+const closeButton = document.querySelector(".close");
+
+// Abrir el modal al hacer clic en el botón
+playButton.addEventListener("click", () => {
+    videoModal.style.display = "block";
+});
+
+// Cerrar el modal al hacer clic en la "x" o fuera del modal
+closeButton.addEventListener("click", () => {
+    videoModal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+    if (event.target === videoModal) {
+        videoModal.style.display = "none";
+    }
+});
+
+</script>
+
+</body>
+</html>

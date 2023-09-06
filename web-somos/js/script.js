@@ -94,8 +94,42 @@ function obtenerNombreMes(numeroMes) {
   return meses[numeroMes];
 }
 
+// Obtén la URL actual
+const url = window.location.href;
 
+// Verifica si la URL contiene "event-sunday.html" en ella
+if (url.includes("event-sunday.html")) {
+    // Obtiene la fecha actual
+    const fechaActual = new Date();
 
+    // Obtiene el día y el mes actual
+    const dia = fechaActual.getDate() + (7 + 0 - fechaActual.getDay()) % 7;
+    const mes = fechaActual.toLocaleString("default", { month: "short" }); // Obtiene el nombre abreviado del mes
+
+    // Obtén el elemento <p> con el ID "diaDomingo"
+    const diaDomingo = document.getElementById("diaDomingo");
+
+    // Actualiza el contenido del elemento con la fecha actual
+    diaDomingo.textContent = `${dia} ${mes} ${fechaActual.getFullYear()}`;
+    
+}
+
+// Verifica si la URL contiene "event-sunday.html" en ella
+if (url.includes("event-mesas.html")) {
+  // Obtiene la fecha actual
+  const fechaActual = new Date();
+
+  // Obtiene el día y el mes actual
+  const dia = fechaActual.getDate() + (5 + 7 - fechaActual.getDay()) % 7;
+  const mes = fechaActual.toLocaleString("default", { month: "short" }); // Obtiene el nombre abreviado del mes
+
+  // Obtén el elemento <p> con el ID "diaDomingo"
+  const diaDomingo = document.getElementById("diaViernes");
+
+  // Actualiza el contenido del elemento con la fecha actual
+  diaDomingo.textContent = `${dia} ${mes} ${fechaActual.getFullYear()}`;
+  
+}
 
 
 

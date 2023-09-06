@@ -19,7 +19,9 @@ window.addEventListener('pageshow', () => {
   // Comprobar si ya se mostró la animación
   const preloaderShown = sessionStorage.getItem('preloaderShown');
 
-  if (!preloaderShown) {
+  const currentUrl = window.location.href;
+
+  if (!preloaderShown && currentUrl === '/') {
     const textContainer = document.querySelector('.text-container');
     const animationContainer = document.querySelector('.animation-container');
     const mainElement = document.querySelector('main');

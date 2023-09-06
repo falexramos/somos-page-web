@@ -5,6 +5,7 @@
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
+  /* Paleta anterior
   --white-color:                  #ffffff;
   --primary-color:                #81B29A;
   --secondary-color:              #3D405B;
@@ -14,6 +15,21 @@
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --link-hover-color:             #F2CC8F;
+
+*/
+/*Paleta nueva*/
+--white-color:                  #ffffff;
+--primary-color:                #fbd304; /* Cambiado */
+--secondary-color:              #050504; /* Cambiado */
+--section-bg-color:             #F4F1DE;
+--custom-btn-bg-color:          #967d04; /* Cambiado */
+--custom-btn-bg-hover-color:    #4876d1; /* Cambiado */
+--dark-color:                   #000000;
+--p-color:                      #717275; /* Cambiado */
+--link-hover-color:             #8588d1; /* Cambiado */
+
+
+
 
   --body-font-family:             'DM Sans', sans-serif;
 
@@ -101,7 +117,7 @@
     border: 0;
     position: relative;
     background-color: hsl(49deg, 100%, 62%);
-    color: #0A0909;
+    color: var(--dark-color);
 }
 
 .reset::after,
@@ -150,15 +166,24 @@
     95% {
         stroke-dasharray: 0%;
         stroke-dashoffset: 90%;
-        fill: #0000;
+        fill: var(--dark-color);
     }
     100% {
         stroke-dasharray: 0%;
         stroke-dashoffset: 0%;
-        fill: #ffffff;
-        filter: drop-shadow(2px 2px 10px #0007);
+        fill: var(--white-color);
+        filter: drop-shadow(2px 2px 10px var(--dark-color));
     }
 }
+
+
+/*---------------------------------------
+  svg menu               
+-----------------------------------------*/
+.mi-svg path {
+  fill: var(--primary-color); /* Define el color de relleno aquí */
+}
+
 
 /*---------------------------------------
   cuerpo pagina               
@@ -290,7 +315,7 @@ strong {
 }
 
 .cd-words-wrapper b {
-  color: var(--link-hover-color);
+  color: var(--primary-color);
   display: inline-block;
   position: absolute;
   white-space: nowrap;

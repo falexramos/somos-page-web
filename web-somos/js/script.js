@@ -1,5 +1,6 @@
 
-/*const textContainer = document.querySelector('.text-container');
+/*
+const textContainer = document.querySelector('.text-container');
 const animationContainer = document.querySelector('.animation-container');
 const mainElement = document.querySelector('main.oculto');
 const footerContainer = document.querySelector('.site-footer');
@@ -15,6 +16,8 @@ textContainer.addEventListener('animationend', () => {
   animationContainer.classList.add('oculto');
 });
 */
+
+
 window.addEventListener('pageshow', () => {
   // Comprobar si ya se mostró la animación
   const preloaderShown = sessionStorage.getItem('preloaderShown');
@@ -40,6 +43,8 @@ window.addEventListener('pageshow', () => {
       // Marcar que la animación ya se mostró
       sessionStorage.setItem('preloaderShown', 'true');
     });
+        // Llama a la función para calcular e imprimir las fechas
+        insertarFechas();
   } else {
     // Si la animación ya se mostró antes, simplemente oculta el preloader
     const preloader = document.querySelector('.preloader');
@@ -49,8 +54,48 @@ window.addEventListener('pageshow', () => {
     preloader.style.display = 'none';
     mainElement.classList.remove('oculto');
     footerContainer.classList.remove('oculto');
-
+    // Llama a la función para calcular e imprimir las fechas
+    insertarFechas();
   }
 });
+
+function insertarFechas() {
+  // Obtener la fecha actual
+  const fechaActual = new Date();
+
+  // Encontrar el próximo viernes (día 5 de la semana, donde 0 es domingo)
+  const proximoViernes = new Date();
+  proximoViernes.setDate(fechaActual.getDate() + (5 + 7 - fechaActual.getDay()) % 7);
+
+  // Encontrar el próximo domingo (día 0 de la semana)
+  const proximoDomingo = new Date();
+  proximoDomingo.setDate(fechaActual.getDate() + (7 + 0 - fechaActual.getDay()) % 7);
+
+  // Obtener los elementos por sus IDs
+  const diaDomingo = document.getElementById("diaDomingo");
+  const mesDomingo = document.getElementById("mesDomingo");
+  const diaViernes = document.getElementById("diaViernes");
+  const mesViernes = document.getElementById("mesViernes");
+
+  // Actualizar los valores de los elementos con las fechas calculadas
+  diaDomingo.textContent = proximoDomingo.getDate().toString().padStart(2, "0");
+  mesDomingo.textContent = obtenerNombreMes(proximoDomingo.getMonth()) + " " + proximoDomingo.getFullYear();
+
+  diaViernes.textContent = proximoViernes.getDate().toString().padStart(2, "0");
+  mesViernes.textContent = obtenerNombreMes(proximoViernes.getMonth()) + " " + proximoViernes.getFullYear();
+}
+
+// Función para obtener el nombre del mes a partir de su número
+function obtenerNombreMes(numeroMes) {
+  const meses = [
+    "Ene", "Feb", "Mar", "Abr", "May", "Jun",
+    "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"
+  ];
+  return meses[numeroMes];
+}
+
+
+
+
 
 

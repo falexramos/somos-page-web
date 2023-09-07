@@ -614,8 +614,9 @@ strong {
 }
 
 .navbar-brand-image {
-  width: 48px;
+  width: 50px;
   height: 48px;
+  object-fit: cover;
 }
 
 .navbar-brand-text {
@@ -1703,3 +1704,36 @@ strong {
   margin-bottom: 0;
 }
 
+/*---------------------------------------
+  GALERIA          
+-----------------------------------------*/
+
+.galeria{
+  display: flex;
+  width: 80%;
+  height: 430px;
+  margin: 10%;
+}
+
+.galeria img {
+width: 0px;
+flex-grow: 1;
+object-fit: cover;
+opacity: .7;
+transition: .5s ease;
+
+}
+.galeria img:hover{
+  cursor: pointer ;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+@media screen and (max-width: 768px) {
+  .galeria img:hover{
+    cursor: crosshair;
+    width: 60%;
+    opacity: 1;
+    filter: contrast(120%);
+  }
+}

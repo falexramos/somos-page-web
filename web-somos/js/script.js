@@ -45,6 +45,26 @@ window.addEventListener('pageshow', () => {
     });
         // Llama a la función para calcular e imprimir las fechas
         insertarFechas();
+
+        $('.owl-carousel').owlCarousel({
+          center: true,
+          loop: true,
+          margin: 30,
+          autoplay: true,
+          responsiveClass: true,
+          responsive:{
+              0:{
+                  items: 2,
+              },
+              767:{
+                  items: 3,
+              },
+              1200:{
+                  items: 4,
+              }
+          }
+      });
+
   } else {
     // Si la animación ya se mostró antes, simplemente oculta el preloader
     const preloader = document.querySelector('.preloader');
@@ -56,6 +76,25 @@ window.addEventListener('pageshow', () => {
     footerContainer.classList.remove('oculto');
     // Llama a la función para calcular e imprimir las fechas
     insertarFechas();
+
+    $('.owl-carousel').owlCarousel({
+      center: true,
+      loop: true,
+      margin: 30,
+      autoplay: true,
+      responsiveClass: true,
+      responsive:{
+          0:{
+              items: 2,
+          },
+          767:{
+              items: 3,
+          },
+          1200:{
+              items: 4,
+          }
+      }
+  });
   }
 });
 

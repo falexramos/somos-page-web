@@ -23,7 +23,8 @@
 --secondary-color:              #050504; /* Cambiado */
 --section-bg-color:             #F4F1DE;
 --custom-btn-bg-color:          #967d04; /* Cambiado */
---custom-btn-bg-hover-color:    #4876d1; /* Cambiado */
+/*--custom-btn-bg-hover-color:    #4876d1; /* Cambiado */
+--custom-btn-bg-hover-color:    #70a8fc; /* Cambiado */ 
 --dark-color:                   #000000;
 --p-color:                      #717275; /* Cambiado */
 --link-hover-color:             #8588d1; /* Cambiado */
@@ -585,7 +586,8 @@ strong {
 }
 
 .sticky-wrapper.is-sticky .navbar {
-  background-color: rgb(61 64 91);
+  /*background-color: rgb(61 64 91);*/
+  background-color: #416cbf;
 }
 
 .navbar {
@@ -616,6 +618,7 @@ strong {
 .navbar-brand-image {
   width: 48px;
   height: 48px;
+  
 }
 
 .navbar-brand-text {
@@ -790,7 +793,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: url('../images/anna-rosar-ZxFyVBHMK-c-unsplash.jpg');
+  background-image: url('../images/foto_portada_principal.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -842,7 +845,7 @@ strong {
   BACKGROUND IMAGE SECTION        
 -----------------------------------------*/
 .section-bg-image {
-  background-image: url('../images/frederik-rosar-NDSZcCfnsbY-unsplash.jpg');
+  background-image: url('../images/foto_boletin_suscripcion.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

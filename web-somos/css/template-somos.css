@@ -27,7 +27,8 @@
 --custom-btn-bg-hover-color:    #70a8fc; /* Cambiado */ 
 --dark-color:                   #000000;
 --p-color:                      #717275; /* Cambiado */
---link-hover-color:             #8588d1; /* Cambiado */
+--link-hover-color:             #8588d1; /* Cambiado  */
+--back-ground-color-nav:        #416cbf; 
 
 
 
@@ -587,7 +588,7 @@ strong {
 
 .sticky-wrapper.is-sticky .navbar {
   /*background-color: rgb(61 64 91);*/
-  background-color: #416cbf;
+  background-color: var(--back-ground-color-nav);
 }
 
 .navbar {
@@ -1344,7 +1345,9 @@ strong {
   }
   
   .navbar {
-    background-color: var(--secondary-color);
+    /*background-color: var(--secondary-color);*/
+    background-color: var(--back-ground-color-nav);
+
   }
 
   .navbar-nav .dropdown-menu {

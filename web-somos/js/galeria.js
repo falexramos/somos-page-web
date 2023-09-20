@@ -1,25 +1,43 @@
-document.addEventListener('DOMContentLoaded', function () {
-const fileInput = document.getElementById('fileInput');
-const gallery = document.querySelector('.gallery');
+const albums = document.querySelectorAll('.album');
 
-fileInput.addEventListener('change', function () {
-    const files = Array.from(fileInput.files);
+albums.forEach((album) => {
+    const modal = album.querySelector('.modal');
+    const closeModal = album.querySelector('.close-modal');
+    const modalContent = album.querySelector('.modal-content');
+    const modalImages = Array.from(modalContent.querySelectorAll('img'));
+    const modalPrev = album.querySelector('.prev');
+    const modalNext = album.querySelector('.next');
+    let currentIndex = 0;
 
-    files.forEach(file => {
-        if (file.type.startsWith('image/')) {
-            const reader = new FileReader();
+    function showImage(index) {
+        modalImages.forEach((img, i) => {
+            img.style.display = i === index ? 'block' : 'none';
+        });
+        currentIndex = index;
+    }
 
-            reader.onload = function (e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
+    modalPrev.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + modalImages.length) % modalImages.length;
+        showImage(currentIndex);
+    });
 
-                const li = document.createElement('li');
-                li.appendChild(img);
-                gallery.appendChild(li);
-            };
+    modalNext.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % modalImages.length;
+        showImage(currentIndex);
+    });
 
-            reader.readAsDataURL(file);
+    album.addEventListener('click', () => {
+        modal.style.display = 'block';
+        showImage(currentIndex);
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target == modal) {
+            modal.style.display = 'none';
         }
     });
 });
-})

@@ -1834,3 +1834,77 @@ strong {
 .owl-theme .owl-dots .owl-dot:hover span {
   background: var(--primary-color);
 }
+
+
+/*---------------------------------------
+  section - donaciones          
+-----------------------------------------*/
+.donaciones{
+  display: flex; 
+  justify-content: center;  
+}
+
+.card {
+  width: 290px;
+  height: 354px;
+  background: var(--back-ground-color-nav);
+  border-radius: 15px;
+  box-shadow: 1px 5px 60px 0px #100a886b;
+ }
+ 
+ .card .card-border-top {
+  width: 60%;
+  height: 3%;
+  background: var(--primary-color);
+  margin: auto;
+  border-radius: 0px 0px 15px 15px;
+ }
+ 
+ .card span {
+  font-weight: 600;
+  color: var(--white-color);
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 20px;
+ }
+ 
+ .card .textdonaciones {
+  font-weight: 400;
+  color: var(--white-color);
+  display: block;
+  text-align: center;
+  padding-top: 3px;
+  font-size: 18px;
+ }
+ 
+ .card .img {
+  background: var(--back-ground-color-nav);
+  margin: auto;
+ }
+ 
+ .card button {
+  padding: 8px 25px;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+  border: none;
+  margin-top: 30px;
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-weight: 600;
+ }
+ 
+ .card button:hover {
+  background: var(--custom-btn-bg-color);
+ }
+
+ /*---------------------------------------
+  section - videos          
+-----------------------------------------*/
+
+.iframe-video {
+    width: 100%;
+    height: 380px;
+    border-radius: 50px;
+}

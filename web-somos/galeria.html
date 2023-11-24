@@ -1,64 +1,414 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="css/galeria.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Galeria SOMOS</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <link href="css/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">    
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
     <link href="css/template-somos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/galeria.css" rel="stylesheet">
 
 
 </head>
+
 <body>
-    <div class="volver">
-    <a href="index.html" class="volver-button">        
-            <button type="button" class="btn btn-warning">Volver</button>
-        
-    </a>
-</div>
-    <div class="container">
-        <div class="box"><img src="images/galeria/img1.jpg"></div>
-        <div class="box"><img src="images/galeria/img2.jpg"></div>
-        <div class="box"><img src="images/galeria/img3.jpg"></div>
-        <div class="box"><img src="images/galeria/img4.jpg"></div>
-        <div class="box"><img src="images/galeria/img5.jpg"></div>
-        <div class="box"><img src="images/galeria/img6.jpg"></div>
-        <div class="box"><img src="images/galeria/img7.jpg"></div>
-        <div class="box"><img src="images/galeria/img8.jpg"></div>
-        <div class="box"><img src="images/galeria/img9.jpg"></div>
-        <div class="box"><img src="images/galeria/img10.jpg"></div>
-        <div class="box"><img src="images/galeria/img11.jpg"></div>
-        <div class="box"><img src="images/galeria/img12.jpg"></div>
-        <div class="box"><img src="images/galeria/img13.jpg"></div>
-        <div class="box"><img src="images/galeria/img14.jpg"></div>
-        <div class="box"><img src="images/galeria/img15.jpg"></div>
-        <div class="box"><img src="images/galeria/img16.jpg"></div>
-        <div class="box"><img src="images/galeria/img17.jpg"></div>
-        <div class="box"><img src="images/galeria/img18.jpg"></div>
-        <div class="box"><img src="images/galeria/img19.jpg"></div>
-        <div class="box"><img src="images/galeria/img20.jpg"></div>
-        <div class="box"><img src="images/galeria/img21.jpg"></div>
-        <div class="box"><img src="images/galeria/img22.jpg"></div>
-        <div class="box"><img src="images/galeria/img23.jpg"></div>
-        <div class="box"><img src="images/galeria/img24.jpg"></div>
-        <div class="box"><img src="images/galeria/img25.jpg"></div>
-        <div class="box"><img src="images/galeria/img26.jpg"></div>
-        <div class="box"><img src="images/galeria/img27.jpg"></div>
-        <div class="box"><img src="images/galeria/img28.jpg"></div>
-        <div class="box"><img src="images/galeria/img29.jpg"></div>
-        <div class="box"><img src="images/galeria/img30.jpg"></div>
-        <div class="box"><img src="images/galeria/img31.jpg"></div>
-        <div class="box"><img src="images/galeria/img32.jpg"></div>
-        <div class="box"><img src="images/galeria/img33.jpg"></div>
-        <div class="box"><img src="images/galeria/img34.jpg"></div>
+
+    <div class="preloader">
+        <div class="animation-container">
+            <div class="text-container">
+                <svg class="text-stroke" viewBox="0 0 500 100" width="80%" height="100%">
+                    <text class="text" x="20" y="75">SOMOS</text>
+                </svg>
+            </div>
+        </div>
     </div>
+
+    <main class="oculto">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/happy.svg" class="navbar-brand-image img-fluid" alt="Somos Iglesia">
+                    <span class="navbar-brand-text">
+                        Somos
+                        <small>Iglesia</small>
+                    </span>
+                </a>
+
+                <div class="d-lg-none ms-auto me-3">
+                    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                        role="button" aria-controls="offcanvasExample">Miembros Login</a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="index.html"a class="nav-link click-scroll" href="#section_2">Regresar </a>>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_5">Contacto</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block ms-lg-3">
+                        <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                            role="button" aria-controls="offcanvasExample">Miembros Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Miembros Login</h5>
+
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+                <form class="custom-form member-login-form" action="#" method="post" role="form">
+
+                    <div class="member-login-form-body">
+                        <div class="mb-4">
+                            <label class="form-label mb-2" for="member-login-number">Membresia No.</label>
+
+                            <input type="text" name="member-login-number" id="member-login-number" class="form-control"
+                                placeholder="11002560" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label mb-2" for="member-login-password">Contraseña</label>
+
+                            <input type="password" name="member-login-password" id="member-login-password"
+                                pattern="[0-9a-zA-Z]{4,10}" class="form-control" placeholder="Password" required="">
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Recordarme
+                            </label>
+                        </div>
+
+                        <div class="col-lg-5 col-md-7 col-8 mx-auto">
+                            <button type="submit" class="form-control">Ingresar</button>
+                        </div>
+
+                        <div class="text-center my-4">
+                            <a href="#">Recuperar contraseña</a>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="mt-auto mb-5">
+                    <p>
+                        <strong class="text-white me-3">Dudas</strong>
+
+                        <a href="tel: +34 665 569 144" class="contact-link">
+                            +34 665 569 144
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#3D405B" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+
+
+        </div>
+
+        
+
+
+        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+
+            <div class="section-overlay"></div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#416cbf" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
+                </path>
+            </svg>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div class="ratio ratio-16x9">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+        </section>
+        <div></div>
+
+        <section class="galeria">
+            <div class="container-galeria">
+                <div class="box"><img src="images/galeria/img1.jpg"></div>
+                <div class="box"><img src="images/galeria/img2.jpg"></div>
+                <div class="box"><img src="images/galeria/img3.jpg"></div>
+                <div class="box"><img src="images/galeria/img4.jpg"></div>
+                <div class="box"><img src="images/galeria/img5.jpg"></div>
+                <div class="box"><img src="images/galeria/img6.jpg"></div>
+                <div class="box"><img src="images/galeria/img7.jpg"></div>
+                <div class="box"><img src="images/galeria/img8.jpg"></div>
+                <div class="box"><img src="images/galeria/img9.jpg"></div>
+                <div class="box"><img src="images/galeria/img10.jpg"></div>
+                <div class="box"><img src="images/galeria/img11.jpg"></div>
+                <div class="box"><img src="images/galeria/img12.jpg"></div>
+                <div class="box"><img src="images/galeria/img13.jpg"></div>
+                <div class="box"><img src="images/galeria/img14.jpg"></div>
+                <div class="box"><img src="images/galeria/img15.jpg"></div>
+                <div class="box"><img src="images/galeria/img16.jpg"></div>
+                <div class="box"><img src="images/galeria/img17.jpg"></div>
+                <div class="box"><img src="images/galeria/img18.jpg"></div>
+                <div class="box"><img src="images/galeria/img19.jpg"></div>
+                <div class="box"><img src="images/galeria/img20.jpg"></div>
+                <div class="box"><img src="images/galeria/img21.jpg"></div>
+                <div class="box"><img src="images/galeria/img22.jpg"></div>
+                <div class="box"><img src="images/galeria/img23.jpg"></div>
+                <div class="box"><img src="images/galeria/img24.jpg"></div>
+                <div class="box"><img src="images/galeria/img25.jpg"></div>
+                <div class="box"><img src="images/galeria/img26.jpg"></div>
+                <div class="box"><img src="images/galeria/img27.jpg"></div>
+                <div class="box"><img src="images/galeria/img28.jpg"></div>
+                <div class="box"><img src="images/galeria/img29.jpg"></div>
+                <div class="box"><img src="images/galeria/img30.jpg"></div>
+                <div class="box"><img src="images/galeria/img31.jpg"></div>
+                <div class="box"><img src="images/galeria/img32.jpg"></div>
+                <div class="box"><img src="images/galeria/img33.jpg"></div>
+                <div class="box"><img src="images/galeria/img34.jpg"></div>
+            </div>
+        </section>
+
+
+
+        <div class="album">
+            <img src="images/galeria/img10.jpg" alt="Álbum 1" class="album-cover">
+            <div class="modal">
+                <span class="close-modal">&times;</span>
+                <div class="modal-content">
+                    <div class="modal-controls">
+                        <button class="prev"><</button>                        
+                    <img src="images/galeria/img17.jpg" alt="Imagen 1" class="modal-image">
+                    <img src="images/galeria/img16.jpg" alt="Imagen 1" class="modal-image">
+                    <img src="images/galeria/img15.jpg" alt="Imagen 1" class="modal-image">
+                    <img src="images/galeria/img14.jpg" alt="Imagen 1" class="modal-image">
+                    <button class="next">></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="album">
+            <img src="images/galeria/img12.jpg" alt="Álbum 2" class="album-cover">
+            <div class="modal">
+                <span class="close">&times;</span>
+                <div class="modal-content">
+                    <img src="images/galeria/img16.jpg" alt="Imagen 1">
+                    <img src="images/galeria/img2.jpg" alt="Imagen 2">
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+
+        <section class="contact-section section-padding" id="section_5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5 col-12">
+                        <form action="#" method="post" class="custom-form contact-form" role="form">
+                            <h2 class="mb-4 pb-2">Contacto Somos</h2>
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-floating">
+                                        <input type="text" name="full-name" id="full-name" class="form-control"
+                                            placeholder="Full Name" required="">
+
+                                        <label for="floatingInput">Nombre</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-floating">
+                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                            class="form-control" placeholder="Email address" required="">
+
+                                        <label for="floatingInput">Email</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" name="message"
+                                            placeholder="Describe message here"></textarea>
+
+                                        <label for="floatingTextarea">Mensaje</label>
+                                    </div>
+
+                                    <button type="submit" class="form-control">Contactar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="contact-info mt-5">
+                            <div class="contact-info-item">
+                                <div class="contact-info-body">
+                                    <strong>Alfafar, Valencia, España</strong>
+
+                                    <p class="mt-2 mb-1">
+                                        <a href="tel: +34-665-569-144" class="contact-link">
+                                            (+34)
+                                            665-569-144
+                                        </a>
+                                    </p>
+
+                                    <p class="mb-0">
+                                        <a href="mailto:somos@company.com" class="contact-link">
+                                            info@somos.com
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="contact-info-footer">
+                                    <a href="https://goo.gl/maps/mJxi297B5zuXGkmD7" target="_blank">Dirección</a>
+                                </div>
+                            </div>
+
+                            <img src="images/WorldMap.svg" class="img-fluid" alt=""
+                                href="https://goo.gl/maps/mJxi297B5zuXGkmD7" target="_blank">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer oculto">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 me-auto mb-5 mb-lg-0">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="images/happy.svg" class="navbar-brand-image img-fluid" alt="">
+                        <span class="navbar-brand-text">
+                            Somos
+                            <small>Iglesia</small>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-12">
+                    <h5 class="site-footer-title mb-4">Reuniones</h5>
+
+                    <p class="d-flex border-bottom pb-3 mb-3 me-lg-3">
+                        <span>Domingo</span>
+                        18:00
+                    </p>
+
+                    <p class="d-flex me-lg-3">
+                        <span>Viernes</span>
+                        17:30
+                    </p>
+                    <br>
+                    <p class="copyright-text">Copyright © 2023 SOMOS</p>
+                </div>
+
+                <div class="col-lg-2 col-12 ms-auto">
+                    <ul class="social-icon mt-lg-5 mt-3 mb-4">
+                        <li class="social-icon-item">
+                            <a href="https://www.instagram.com/ssomos.oficial/" class="social-icon-link bi-instagram"
+                                target="_blank"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                    <p class="copyright-text oculto">Design: <a rel="nofollow" href="https://templatemo.com"
+                            target="_blank">TemplateMo</a></p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#fbd304" fill-opacity="1"
+                d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/galeria.js"></script>
 </body>
+
 </html>

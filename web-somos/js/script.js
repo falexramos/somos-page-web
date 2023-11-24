@@ -110,11 +110,17 @@ function insertarFechas() {
   const proximoDomingo = new Date();
   proximoDomingo.setDate(fechaActual.getDate() + (7 + 0 - fechaActual.getDay()) % 7);
 
+  // Encontrar el próximo Miercoles (día 0 de la semana)
+  const proximoMiercoles = new Date();
+  proximoMiercoles.setDate(fechaActual.getDate() + (3 + 7 - fechaActual.getDay()) % 7);
+
   // Obtener los elementos por sus IDs
   const diaDomingo = document.getElementById("diaDomingo");
   const mesDomingo = document.getElementById("mesDomingo");
   const diaViernes = document.getElementById("diaViernes");
   const mesViernes = document.getElementById("mesViernes");
+  const diaMiercoles = document.getElementById("diaMiercoles");
+  const mesMiercoles = document.getElementById("mesMiercoles");
 
   // Actualizar los valores de los elementos con las fechas calculadas
   diaDomingo.textContent = proximoDomingo.getDate().toString().padStart(2, "0");
@@ -122,6 +128,9 @@ function insertarFechas() {
 
   diaViernes.textContent = proximoViernes.getDate().toString().padStart(2, "0");
   mesViernes.textContent = obtenerNombreMes(proximoViernes.getMonth()) + " " + proximoViernes.getFullYear();
+
+  diaMiercoles.textContent = proximoMiercoles.getDate().toString().padStart(2, "0");
+  mesMiercoles.textContent = obtenerNombreMes(proximoMiercoles.getMonth()) + " " + proximoMiercoles.getFullYear();
 }
 
 // Función para obtener el nombre del mes a partir de su número
@@ -169,6 +178,13 @@ if (url.includes("event-mesas.html")) {
   diaDomingo.textContent = `${dia} ${mes} ${fechaActual.getFullYear()}`;
   
 }
+
+function abrirDonacion() {
+  window.open("https://square.link/u/j6XtbZnM", "_blank");
+}
+
+// Escuchamos el evento click del botón de donación
+document.querySelector(".btn-donar").addEventListener("click", abrirDonacion);
 
 
 

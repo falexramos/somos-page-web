@@ -1838,6 +1838,9 @@ strong {
 /*---------------------------------------
   section - donaciones          
 -----------------------------------------*/
+.donaciones-padding {
+  padding-bottom: 100px;
+}
 .donaciones{
   display: flex; 
   justify-content: center;  
@@ -1901,9 +1904,3 @@ strong {
  /*---------------------------------------
   section - videos          
 -----------------------------------------*/
-
-.iframe-video {
-    width: 100%;
-    height: 380px;
-    border-radius: 50px;
-}

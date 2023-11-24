@@ -20,17 +20,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Configuración del correo y prevención de inyección de cabeceras
     $to = "contacto@iglesiasomos.es"; // Cambia esto con tu dirección de correo
-    $subject = mb_encode_mimeheader("Nuevo mensaje de contacto WEB SOMOS de $nombre", "UTF-8");
+    $subject = mb_encode_mimeheader("Nuevo mensaje de contacto de $nombre", "UTF-8");
     $message = "Nombre: $nombre\nCorreo Electrónico: $email\nMensaje:\n$mensaje";
 
+    // Configuración del correo de agradecimiento
+    $subjectUsuario = "Gracias por ponerte en contacto con Somos tu comunidad";
+    $messageUsuario = "Hola $nombre,\n\nGracias por ponerte en contacto con nosotros. Pronto nos pondremos en contacto contigo.\n\nAtentamente,\nSomos tu comunidad";
+
+    // Configurar el remitente y el nombre del remitente
+    $headers = "From: Somos tu comunidad <contacto@iglesiasomos.es>";
+
     // Enviar el correo principal
-    mail($to, $subject, $message);
+    mail($to, $subject, $message, $headers);
 
     // Enviar correo de agradecimiento al usuario
-    $subjectUsuario = "Gracias por ponerte en contacto con nosotros";
-    $messageUsuario = "Hola $nombre,\n\nGracias por ponerte en contacto con nosotros. Pronto nos pondremos en contacto contigo.\n\nAtentamente,\n SOMOS Comunidad";
-
-    mail($email, $subjectUsuario, $messageUsuario);
+    mail($email, $subjectUsuario, $messageUsuario,$headers);
 
     // Redireccionar a una página de confirmación
     header("Location: index.html");

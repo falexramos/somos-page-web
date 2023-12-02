@@ -1911,3 +1911,15 @@ strong {
     height: 380px;
     border-radius: 50px;
 }
+
+
+.emoji-carita{
+  width:"16";
+  height:"30";
+  color: var(--dark-color);
+}
+
+.asociacions-padding{
+  margin-top: -10%;
+  margin-bottom: 100px;
+}

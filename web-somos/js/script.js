@@ -40,6 +40,16 @@ window.addEventListener('pageshow', () => {
       mainElement.classList.remove('oculto');
       footerContainer.classList.remove('oculto');
 
+      const iframeElementPredicas = document.getElementById('predicas');
+
+      //llamarAPI
+      llamarAPI().then(code => {
+        iframeElementPredicas.src = `https://www.youtube.com/embed/${code}`;
+        console.error('iframeElementPredicas:', iframeElementPredicas.src );
+      }).catch(error => {
+        console.error('Error general:', error);
+      });
+
       // Marcar que la animación ya se mostró
       sessionStorage.setItem('preloaderShown', 'true');
     });
@@ -70,10 +80,19 @@ window.addEventListener('pageshow', () => {
     const preloader = document.querySelector('.preloader');
     const mainElement = document.querySelector('main');
     const footerContainer = document.querySelector('.site-footer');
-
+    const iframeElementPredicas = document.getElementById('predicas');
+    
     preloader.style.display = 'none';
     mainElement.classList.remove('oculto');
     footerContainer.classList.remove('oculto');
+    
+         //llamarAPI
+         llamarAPI().then(code => {
+          iframeElementPredicas.src = `https://www.youtube.com/embed/${code}`;
+          console.error('iframeElementPredicas:', iframeElementPredicas.src );
+        }).catch(error => {
+          console.error('Error general:', error);
+        });
     // Llama a la función para calcular e imprimir las fechas
     insertarFechas();
 
@@ -185,6 +204,33 @@ function abrirDonacion() {
 
 // Escuchamos el evento click del botón de donación
 document.querySelector(".btn-donar").addEventListener("click", abrirDonacion);
+
+function llamarAPI() {
+  // Devuelve una promesa
+  return new Promise((resolve, reject) => {
+    fetch('https://recursoapi.iglesiasomos.es/getCodeVideoPredica.php')
+      .then(response => response.json())
+      .then(data => {
+        // Filtra por category_video igual a 1
+        const filteredData = data.filter(item => item.category_video === "1");
+
+        // Ordena por date_register en orden descendente (del más reciente al más antiguo)
+        filteredData.sort((a, b) => new Date(b.date_register) - new Date(a.date_register));
+
+        // Toma solo el primer elemento (el más reciente)
+        const videoMasReciente = filteredData[0];
+
+        // Resuelve la promesa con el código del video más reciente
+        resolve(videoMasReciente.code);
+      })
+      .catch(error => {
+        console.error('Error al llamar a la API:', error);
+        // Rechaza la promesa con el error
+        reject(error);
+      });
+  });
+}
+
 
 
 

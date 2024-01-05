@@ -1,0 +1,248 @@
+openapi: 3.0.3
+info:
+  title: Recursos API somos
+  version: 1.0.0
+  description: >
+    API para manejar el backend de todas las solicitudes frontend.
+    Proporciona los recursos necesarios para que los usuarios puedan
+    gestionar las diferentes actividades de la página web y del panel
+    de administración. Esta API sigue el enfoque "API First".
+  contact:
+    email: contacto@somos.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
+security:
+  - TokenAuth: []
+
+paths:
+  /recursosPage:
+    get:
+      description: Retorna todos los recursos de videos de Youtube disponibles para mostrar en la web principal.
+      operationId: getRecursosPage
+      responses:
+        '200':
+          description: Lista de recursos de la página web
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  page:
+                    type: object
+                    properties:
+                      predicas:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/recursoPage'
+                      bienvenida:
+                        $ref: '#/components/schemas/recursoPage'
+              examples:
+                EjemploExitoso:
+                  value:
+                    page:
+                      predicas:
+                        - code: 'code1'
+                          nombre: 'Predica 1'
+                          description: 'Descripción de la predica 1'
+                        - code: 'code2'
+                          nombre: 'Predica 2'
+                          description: 'Descripción de la predica 2'
+                      bienvenida:
+                        code: '456'
+                        nombre: 'Bienvenida'
+                        description: 'Descripción de la bienvenida'
+      parameters:
+        - $ref: '#/components/parameters/TokenParam'
+        - $ref: '#/components/parameters/ClientIdParam'
+
+  /saveVideoPredica:
+    post:
+      operationId: saveVideoPredica
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+            example:
+              code: "ASDASdaXXX989"
+      responses:
+        '200':
+          description: Video de predicación guardado
+          content: 
+            application/json: 
+              example:
+                message:  'Video guardado con éxito'
+      parameters:
+        - $ref: '#/components/parameters/TokenParam'
+        - $ref: '#/components/parameters/ClientIdParam'
+
+  /getCalendarActivities:
+    get:
+      operationId: getCalendarActivities
+      responses:
+        '200':
+          description: Lista de actividades del calendario
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  events:
+                    items:
+                      $ref: '#/components/schemas/events'
+              examples:
+                EjemploExitoso:
+                  value:
+                    events:
+                      - title: 'Evento 1'
+                        start: '2023-01-01'
+                        allDay: true
+                        backgroundColor: '#FF5733'
+                        borderColor: '#000000'
+                        end: '2023-01-02'
+                        url: 'https://evento1.com'
+                        timeStart: '12:00'
+                        estado:
+                          id: 1
+                          name: 'Activo'
+      parameters:
+        - $ref: '#/components/parameters/TokenParam'
+        - $ref: '#/components/parameters/ClientIdParam'
+
+  /getDataAdminPanel:
+    get:
+      operationId: getDataAdminPanel
+      responses: 
+        '200':
+          description: Eventos del panel asociados al usuario.
+          content: 
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  panel:
+                    items: 
+                      $ref: '#/components/schemas/recursoPage'
+                  events:
+                    items: 
+                      $ref: '#/components/schemas/events'
+              examples:
+                EjemploExitoso:
+                  value:
+                    panel:
+                      - code: '789'
+                        nombre: 'Panel 1'
+                        description: 'Descripción del panel 1'
+                    events:
+                      - title: 'Evento 2'
+                        start: '2023-02-01'
+                        allDay: false
+                        backgroundColor: '#007BFF'
+                        borderColor: '#FFFFFF'
+                        end: '2023-02-01'
+                        url: 'https://evento2.com'
+                        timeStart: '15:30'
+                        estado:
+                          id: 2
+                          name: 'Inactivo'
+                      - title: 'Evento 3'
+                        start: '2023-02-01'
+                        allDay: false
+                        backgroundColor: '#007BFF'
+                        borderColor: '#FFFFFF'
+                        end: '2023-02-01'
+                        url: 'https://evento3.com'
+                        timeStart: '14:30'
+                        estado:
+                          id: 1
+                          name: 'Activo'
+      parameters:
+        - $ref: '#/components/parameters/TokenParam'
+        - $ref: '#/components/parameters/ClientIdParam'
+
+components:
+  parameters:
+    TokenParam:
+      name: token
+      in: header
+      schema:
+        type: string
+      required: true
+      description: Token de autenticación
+
+    ClientIdParam:
+      name: clientID
+      in: header
+      schema:
+        type: string
+      required: true
+      description: Identificador del cliente
+      
+  schemas:
+    estados:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    recursoPage:
+      type: object
+      properties:
+        code:
+          type: string
+        nombre:
+          type: string
+        description:
+          type: string
+    events:
+      type: object
+      properties:
+        title:
+          type: string
+        start:
+          type: string
+          format: date
+        allDay:
+          type: boolean
+        backgroundColor:
+          type: string
+        borderColor:
+          type: string
+        end:
+          type: string
+          format: date
+        url:
+          type: string
+        timeStart:
+          type: string
+          format: time
+        estado:
+          type: object
+          $ref: '#/components/schemas/estados'
+    createUser:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 50
+        lastName:
+          type: string
+        dateBirth:
+          type: string
+          format: date
+        phone:
+          type: string
+        email:
+          type: string
+          format: email
+tags:
+  - name: 'v1'
+    description: 'Versión 1 de la API'

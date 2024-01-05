@@ -44,14 +44,14 @@ paths:
                     page:
                       predicas:
                         - code: 'code1'
-                          nombre: 'Predica 1'
+                          title: 'Predica 1'
                           description: 'Descripción de la predica 1'
                         - code: 'code2'
-                          nombre: 'Predica 2'
+                          title: 'Predica 2'
                           description: 'Descripción de la predica 2'
                       bienvenida:
                         code: '456'
-                        nombre: 'Bienvenida'
+                        title: 'Bienvenida'
                         description: 'Descripción de la bienvenida'
       parameters:
         - $ref: '#/components/parameters/TokenParam'
@@ -197,7 +197,7 @@ components:
       properties:
         code:
           type: string
-        nombre:
+        title:
           type: string
         description:
           type: string

@@ -16,7 +16,7 @@ if (isset($_GET['code'])) {
     $date_register = date('Y-m-d');
 
     // Ejecuta la consulta de inserción
-    $query = "INSERT INTO `videos_youtube` (`id`, `code`, `link`, `description`, `date_register`, `category_video`, `user_id`) VALUES (NULL, '$code', 'https://www.youtube.com/embed/', 'Somos Comunidad Predica', '$date_register', '1', '1')";
+    $query = "INSERT INTO `videos_youtube` (`code`,  `description`, `title`,`date_register`, `category`, `user`) VALUES ('$code', 'Somos Comunidad Predica', '','$date_register', '5', '1')";
 
     if ($conn->query($query)) {
         // Si la inserción es exitosa, devuelve un mensaje de éxito

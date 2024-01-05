@@ -8,7 +8,7 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
 // Realiza la consulta a la base de datos
-$query = "SELECT code, category_video, date_register FROM videos_youtube";
+$query = "SELECT code, category, date_register FROM videos_youtube";
 $result = $conn->query($query);
 
 // Verifica si la consulta fue exitosa

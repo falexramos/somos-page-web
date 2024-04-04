@@ -1,0 +1,24 @@
+<nb-card class="calendar-grid-theme">
+    <nb-card-header>Outline Alert</nb-card-header>
+    <nb-card-body>
+        <div class="calendar-grid">
+            <div class="title">{{ currentMonth }}</div>
+            <div class="subtitle nb-calendar-days-names .day ">
+                <div class="grid-row" *ngFor="let day of weekDays">{{ day }}</div>
+            </div>
+            <div *ngFor="let week of calendar" class="grid-row">
+                <div *ngFor="let day of week" class="grid-cell">
+                    <div class="day-number">{{ day }}
+                        <div *ngIf="mostrarEventos(selectedDate.month(), day).length > 0">
+                            <ul class="event-list">
+                                <li *ngFor="let evento of mostrarEventos(selectedDate.month(), day)">
+                                    <nb-alert accent="danger">{{ evento.titulo }}</nb-alert>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>

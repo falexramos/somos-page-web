@@ -45,7 +45,7 @@ window.addEventListener('pageshow', () => {
       //llamarAPI
       llamarAPI().then(code => {
         iframeElementPredicas.src = `https://www.youtube.com/embed/${code}`;
-        console.error('iframeElementPredicas:', iframeElementPredicas.src );
+        console.error('iframeElementPredicas:', iframeElementPredicas.src);
       }).catch(error => {
         console.error('Error general:', error);
       });
@@ -53,46 +53,6 @@ window.addEventListener('pageshow', () => {
       // Marcar que la animación ya se mostró
       sessionStorage.setItem('preloaderShown', 'true');
     });
-        // Llama a la función para calcular e imprimir las fechas
-        insertarFechas();
-
-        $('.owl-carousel').owlCarousel({
-          center: true,
-          loop: true,
-          margin: 30,
-          autoplay: true,
-          responsiveClass: true,
-          responsive:{
-              0:{
-                  items: 2,
-              },
-              767:{
-                  items: 3,
-              },
-              1200:{
-                  items: 4,
-              }
-          }
-      });
-
-  } else {
-    // Si la animación ya se mostró antes, simplemente oculta el preloader
-    const preloader = document.querySelector('.preloader');
-    const mainElement = document.querySelector('main');
-    const footerContainer = document.querySelector('.site-footer');
-    const iframeElementPredicas = document.getElementById('predicas');
-    
-    preloader.style.display = 'none';
-    mainElement.classList.remove('oculto');
-    footerContainer.classList.remove('oculto');
-    
-         //llamarAPI
-         llamarAPI().then(code => {
-          iframeElementPredicas.src = `https://www.youtube.com/embed/${code}`;
-          console.error('iframeElementPredicas:', iframeElementPredicas.src );
-        }).catch(error => {
-          console.error('Error general:', error);
-        });
     // Llama a la función para calcular e imprimir las fechas
     insertarFechas();
 
@@ -102,18 +62,58 @@ window.addEventListener('pageshow', () => {
       margin: 30,
       autoplay: true,
       responsiveClass: true,
-      responsive:{
-          0:{
-              items: 2,
-          },
-          767:{
-              items: 3,
-          },
-          1200:{
-              items: 4,
-          }
+      responsive: {
+        0: {
+          items: 2,
+        },
+        767: {
+          items: 3,
+        },
+        1200: {
+          items: 4,
+        }
       }
-  });
+    });
+
+  } else {
+    // Si la animación ya se mostró antes, simplemente oculta el preloader
+    const preloader = document.querySelector('.preloader');
+    const mainElement = document.querySelector('main');
+    const footerContainer = document.querySelector('.site-footer');
+    const iframeElementPredicas = document.getElementById('predicas');
+
+    preloader.style.display = 'none';
+    mainElement.classList.remove('oculto');
+    footerContainer.classList.remove('oculto');
+
+    //llamarAPI
+    llamarAPI().then(code => {
+      iframeElementPredicas.src = `https://www.youtube.com/embed/${code}`;
+      console.error('iframeElementPredicas:', iframeElementPredicas.src);
+    }).catch(error => {
+      console.error('Error general:', error);
+    });
+    // Llama a la función para calcular e imprimir las fechas
+    insertarFechas();
+
+    $('.owl-carousel').owlCarousel({
+      center: true,
+      loop: true,
+      margin: 30,
+      autoplay: true,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 2,
+        },
+        767: {
+          items: 3,
+        },
+        1200: {
+          items: 4,
+        }
+      }
+    });
   }
 });
 
@@ -166,19 +166,19 @@ const url = window.location.href;
 
 // Verifica si la URL contiene "event-sunday.html" en ella
 if (url.includes("event-sunday.html")) {
-    // Obtiene la fecha actual
-    const fechaActual = new Date();
+  // Obtiene la fecha actual
+  const fechaActual = new Date();
 
-    // Obtiene el día y el mes actual
-    const dia = fechaActual.getDate() + (7 + 0 - fechaActual.getDay()) % 7;
-    const mes = fechaActual.toLocaleString("default", { month: "short" }); // Obtiene el nombre abreviado del mes
+  // Obtiene el día y el mes actual
+  const dia = fechaActual.getDate() + (7 + 0 - fechaActual.getDay()) % 7;
+  const mes = fechaActual.toLocaleString("default", { month: "short" }); // Obtiene el nombre abreviado del mes
 
-    // Obtén el elemento <p> con el ID "diaDomingo"
-    const diaDomingo = document.getElementById("diaDomingo");
+  // Obtén el elemento <p> con el ID "diaDomingo"
+  const diaDomingo = document.getElementById("diaDomingo");
 
-    // Actualiza el contenido del elemento con la fecha actual
-    diaDomingo.textContent = `${dia} ${mes} ${fechaActual.getFullYear()}`;
-    
+  // Actualiza el contenido del elemento con la fecha actual
+  diaDomingo.textContent = `${dia} ${mes} ${fechaActual.getFullYear()}`;
+
 }
 
 // Verifica si la URL contiene "event-sunday.html" en ella
@@ -195,7 +195,7 @@ if (url.includes("event-mesas.html")) {
 
   // Actualiza el contenido del elemento con la fecha actual
   diaDomingo.textContent = `${dia} ${mes} ${fechaActual.getFullYear()}`;
-  
+
 }
 
 function abrirDonacion() {
@@ -212,7 +212,7 @@ function llamarAPI() {
       .then(response => response.json())
       .then(data => {
         // Filtra por category_video igual a 1
-        const filteredData = data.filter(item => item.category_video === "1");
+        const filteredData = data.filter(item => item.category !== "1");
 
         // Ordena por date_register en orden descendente (del más reciente al más antiguo)
         filteredData.sort((a, b) => new Date(b.date_register) - new Date(a.date_register));

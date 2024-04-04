@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-10">
+        <nb-card>
+            <nb-card-header>Registro de usuario</nb-card-header>
+            <nb-card-body>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="inputFirstName" class="label">Nombres</label>
+                            <input type="text" nbInput fullWidth id="inputFirstName" placeholder="Nombres">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="inputLastName" class="label">Apellidos</label>
+                            <input type="text" nbInput fullWidth id="inputLastName" placeholder="Apellidos">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="inputEmail" class="label">Email</label>
+                            <input type="email" nbInput fullWidth id="inputEmail" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="inputPhone" class="label">Télefono</label>
+                            <input type="text" nbInput fullWidth id="inputPhone" placeholder="Télefono">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="inputDateBirth" class="label">Fecha Nacimiento</label>
+                            <input id="DateBirth" fullWidth nbInput placeholder="Fecha Nacimiento" [nbDatepicker]="formpicker">
+                            <nb-datepicker #formpicker></nb-datepicker>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="submit" status="success" nbButton>Guardar</button>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
